@@ -1,33 +1,34 @@
-alertFunction = function() {
-   alert("Hello!");
-};
-
-
-//Add event listener to images
-const image = document.querySelectorAll('img');
-image.addEventListener('click', alertFunction);
-
 let computerSelection = "null";
 
 //Create computer choice
 function computerPlay() {
 let randomNumber = Math.floor(Math.random() * 3) + 1;
 if (randomNumber === 1) {
-console.log('The computer chooses rock');
 computerSelection = 'rock';
 return;
 } else if (randomNumber === 2) {
-console.log('The computer chooses paper');
 computerSelection = 'paper';
 return;
 } else {
-console.log("The computer chooses scissors!");
 computerSelection = 'scissors';
 }
 }
 
 //Firing here as game function commented out.
 computerPlay();
+
+//Define images
+const images = document.querySelectorAll('img');
+
+let playerSelection = '';
+
+//Add event listeners to all images and pull in alt tag
+images.forEach((img) => {
+img.addEventListener('click', () => {
+ playerSelection = img.getAttribute("alt");
+ playRound();
+});
+});
 
 //Prompt user for their choice
 // function playerChoose() {
@@ -45,24 +46,44 @@ let totalUserWins = 0;
 let totalComputerWins = 0;
 let roundCount = 0;
 
+const winningText = document.querySelector('#winningText');
+const logPlayerChoice = document.querySelector('#logPlayerChoice');
+const logComputerChoice = document.querySelector('#logComputerChoice');
+const counterText = document.querySelector('#counterText');
+
+
 //Compute and play game
 function playRound() {
 if ((playerSelection === 'rock' && computerSelection === 'paper') || (playerSelection === 'scissors' && computerSelection === 'rock') || (playerSelection === 'paper' && computerSelection === 'scissors')) {
-console.log("Computer wins!"); 
-// ++totalComputerWins;
+   ++totalComputerWins;
+   logPlayerChoice.textContent = `User selects ${playerSelection}`;
+   logComputerChoice.textContent = `Computer selects ${computerSelection}`;
+   winningText.classList.add('loose');
+   winningText.textContent = "Computer wins!";
+   counterText.textContent = `Total User wins: ${totalUserWins} & Total Computer wins: ${totalComputerWins} +
+& round count: ${roundCount}`;
+
 return; 
 } else if 
 (playerSelection === computerSelection) {
-console.log("Draw!!");
+   logPlayerChoice.textContent = `User selects ${playerSelection}`;
+   logComputerChoice.textContent = `Computer selects ${computerSelection}`;
+   winningText.textContent = "It's a draw!";
+   counterText.textContent = `Total User wins: ${totalUserWins} & Total Computer wins: ${totalComputerWins} +
+& round count: ${roundCount}`;
+
 return;
 } else {
-console.log("User wins!");
-// ++totalUserWins;
+   ++totalUserWins;
+    logPlayerChoice.textContent = `User selects ${playerSelection}`
+   logComputerChoice.textContent = `Computer selects ${computerSelection}`;
+   winningText.classList.add('win');
+   winningText.textContent = "User wins!";
+   counterText.textContent = `Total User wins: ${totalUserWins} & Total Computer wins: ${totalComputerWins} +
+& round count: ${roundCount}`;
 return;
 }
 }
-
-// playRound();
 
 //    //Play game 5 times
 // function game() {

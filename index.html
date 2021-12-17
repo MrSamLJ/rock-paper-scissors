@@ -9,6 +9,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="header-area">
+<h1>Wanna play Rock, Paper, Scissors? Click on your choice below...</h1>
+</div>
 <div id="container">
     <div id="rock" class="option">
         <img src="/images/rock.webp" alt="rock" id="rock"/>
@@ -20,17 +23,12 @@
         <img src="/images/scissors.jpg" alt="scissors"/>
     </div>
 </div>
-
-<script>
-    alertFunction = function() {
-   alert("Hello!");
-};
-
-
-//Add event listener to images
-const image = document.querySelectorAll('img');
-image.addEventListener('click', alertFunction);
-</script>
+<div id="counter">
+    <h3 id="logPlayerChoice"></h3>
+    <h3 id="logComputerChoice"></h3>
+<h2 id="winningText"></h2>
+<p id="counterText"></p>
+</div>
 
 </body>
 </html>
