@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="/styles.css" />
     <title>Document</title>
 </head>
 <body>
-    
+<div id="container">
+    <div id="rock" class="option">
+        <img src="/images/rock.webp" alt="rock" id="rock"/>
+    </div>
+    <div id="paper" class="option">
+        <img src="/images/paper.png" alt="paper"/>
+    </div>
+    <div id="scissors" class="option">
+        <img src="/images/scissors.jpg" alt="scissors"/>
+    </div>
+</div>
+
+<script>
+    alertFunction = function() {
+   alert("Hello!");
+};
+
+
+//Add event listener to images
+const image = document.querySelectorAll('img');
+image.addEventListener('click', alertFunction);
+</script>
+
 </body>
 </html>
