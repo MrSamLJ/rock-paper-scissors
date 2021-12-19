@@ -4,31 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="/styles.css" />
+    
     <title>Document</title>
 </head>
 <body>
     <div id="header-area">
-<h1>Wanna play Rock, Paper, Scissors? Click on your choice below...</h1>
+<h1>Can you beat the computer in Rock, Paper, Scissors?</h1>
+<h2>Click on your choice to play...</h2>
 </div>
+<div id="body-area">
 <div id="container">
     <div id="rock" class="option">
-        <img src="/images/rock.webp" alt="rock" id="rock"/>
+        <img src="/images/rock.png" alt="rock" id="rock"/>
     </div>
     <div id="paper" class="option">
         <img src="/images/paper.png" alt="paper"/>
     </div>
     <div id="scissors" class="option">
-        <img src="/images/scissors.jpg" alt="scissors"/>
+        <img src="/images/scissors.png" alt="scissors"/>
     </div>
 </div>
 <div id="counter">
-    <h3 id="logPlayerChoice"></h3>
-    <h3 id="logComputerChoice"></h3>
-<h2 id="winningText"></h2>
-<p id="counterText"></p>
+    <h2><b>Scoreboard</b></h2>
+    <div id="info">
+    <h2 id="logPlayerChoice"></h2>
+     <h2 id ="logComputerChoice"></h2>
+    <h2 id ="winningText"></h2>
+    <h3 id="roundsLeft">5 rounds left!</h3>
+    <p id="counterText"></p>
 </div>
-
+<h2 id='overallWinnerText'></h2>
+</div>
+</div>
 </body>
 </html>

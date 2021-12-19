@@ -1,14 +1,28 @@
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    position: relative;
+    height: auto;
+    min-height: 100% !important;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('/images/full-bloom.png');
    }
+
+   h1 {
+       font-size: 40px;
+   }
+
+   #body-area {
+       display: flex;
+       justify-content: space-evenly;
+   }
+
 
 #header-area {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: lightgray;
 }
 
 #container {
@@ -16,21 +30,27 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* height: 100vh; */
-    gap: 10%;    
+    gap: 10%;  
+    margin: 20px 0 20px 0;  
+    /* flex-wrap: wrap; */
 }
 
 .option {
     display: flex;
+    margin-bottom: 30px;
 }
 
 img {
-    max-width: 250px;
+    max-width: 200px;
      transition: transform 0.5s;
 }
 
+#rock {
+    max-width: 165px;
+}
+
 img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     cursor: pointer;
 }
 
@@ -39,7 +59,33 @@ img:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px dashed blue;
+    border: 1px dashed black;
+    padding-bottom: 10px;
+    min-width: 22%;
+max-width: 20%;
+height: 350px;
+background-color: rgba(255,255,0,.5);
+border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+    #body-area, #container {
+        flex-wrap: wrap;
+    }
+    #counter {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .loose {
@@ -49,3 +95,16 @@ img:hover {
 .win {
     color: green;
 }
+
+.draw {
+    color: orange;
+}
+
+p, h2, h3 {
+    margin: 10px;
+}
+
+button {
+    font-size: 20px;
+}
+
